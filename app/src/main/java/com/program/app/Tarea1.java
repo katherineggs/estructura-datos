@@ -6,11 +6,12 @@ import java.util.Scanner;
 @RestController
 public class Tarea1 {
     @RequestMapping("/")
-    public String index() {
+    public static String index() {
         String grade;
-        System.out.print("Enter de mark: ");
-        Scanner scan = new Scanner(System.in);
-        int mark = scan.nextInt();
+//        System.out.print("Enter de mark: ");
+//        Scanner scan = new Scanner(System.in);
+//        int mark = scan.nextInt();
+        int mark = 65;
 
         if ((mark >= 75) && (mark < 100)) {
             grade = "Your grade is: O";
