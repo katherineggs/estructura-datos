@@ -1,19 +1,26 @@
 package com.queue.tarea3;
 
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import java.util.ArrayList;
 
-//@RestController
 public class Tarea3 {
-//    @RequestMapping
-//    queue
-    public static void push(){
-
+    public static ArrayList push(String trans, ArrayList queue){
+        queue.add(trans);
+        return queue;
     }
-    public static void pop(){
-
+    public static ArrayList pop(ArrayList queue){
+        try{
+            queue.remove(0);
+            System.out.println(queue);
+        } catch (Exception e) {
+            System.out.println("Lista vacia");
+        }
+        return queue;
     }
-    public static void clear(){
-
+    public static ArrayList clear(ArrayList queue){
+        queue.clear();
+        return queue;
+    }
+    public static ArrayList show(ArrayList queue){
+       return queue;
     }
 }
