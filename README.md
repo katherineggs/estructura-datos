@@ -14,4 +14,4 @@ Push, pop and clear in a Queue implemented with an array to represent a line in 
 
 ## Carpeta tarea 4 
 Control de creditos y debitos varios. Utilizando arrays unidimennsionales
-- <a href="https://github.com/katherineggs/estructura-datos/tree/master/tarea3">Tarea 4</a>
+- <a href="https://github.com/katherineggs/estructura-datos/tree/master/tarea4">Tarea 4</a>
