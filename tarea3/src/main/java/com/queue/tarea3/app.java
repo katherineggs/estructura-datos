@@ -6,33 +6,60 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 
 @Controller
 public class app {
-    ArrayList<String> queue = new ArrayList<>();
+//    ArrayList<String> queue = new ArrayList<>();
+    String queue[];
+    int capacity = 0;
+    int index = -1;
+
+    public void Bank(){
+        queue = new String[15];
+    }
 
     @RequestMapping(value = {"/push"})
     @ResponseBody
-    public ArrayList pushQueue(@RequestParam String info){
-        Tarea3.push(info ,queue);
-        return queue;
+    public String[] pushQueue(@RequestParam String info){
+        queue[index++]=info;
+        capacity ++;
+        if(capacity >= 15){
+            String new_queue[] = new String[capacity*2];
+            return  new_queue;
+        }
+//        for(int i = 0; i < 15; i++){
+//            if (queue[i].equals(0)){
+//                queue[i]= info;
+//            }
+//        }
+//        Tarea3.push(info ,queue);
+        else{
+            return queue;
+        }
     }
     @RequestMapping(value = {"/pop"})
     @ResponseBody
-    public ArrayList popQueue(){
-        Tarea3.pop(queue);
+    public String[] popQueue(){
+        for(int i = 0; i > 15; i++ ){
+            queue[i] = queue[i+1];
+        }
         return queue;
     }
     @RequestMapping(value = {"/clear"})
     @ResponseBody
-    public ArrayList clearQueue(){
-        Tarea3.clear(queue);
+    public String[] clearQueue(){
+        for(int i = 0; i > 15; i++ ){
+            queue[i] = "cleared";
+        }
+//        Tarea3.clear(queue);
         return queue;
     }
     @RequestMapping(value = {"/show"})
     @ResponseBody
-    public ArrayList showQueue(){
-        Tarea3.show(queue);
+    public String[] showQueue(){
+
+//        Tarea3.show(queue);
         return queue;
     }
 

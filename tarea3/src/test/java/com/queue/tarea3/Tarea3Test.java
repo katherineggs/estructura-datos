@@ -12,7 +12,9 @@ class Tarea3Test {
         ArrayList<String> queue = new ArrayList<>();
         ArrayList<String> queueTest = new ArrayList<>();
         queueTest.add("withdraw Katherine 500");
-        assertThat(Tarea3.push("withdraw Katherine 500",queue),is (queueTest));
+        queueTest.add("deposit Fab 500");
+        queue.add("withdraw Katherine 500");
+        assertThat(Tarea3.push("deposit Fab 500",queue),is (queueTest));
     }
     @Test
     void pop() {
