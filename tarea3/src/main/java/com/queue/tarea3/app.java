@@ -11,10 +11,8 @@ import java.util.Arrays;
 
 @Controller
 public class app {
-//    ArrayList<String> queue = new ArrayList<>();
-    int capacity = 0;
     int index = 0;
-    int size = 100;
+    int size = 0;
     public static String[] Bank(int size){
         String q[] = new String[size];
         return q;
@@ -23,27 +21,24 @@ public class app {
     @RequestMapping(value = {"/push"})
     @ResponseBody
     public String pushQueue(@RequestParam String info){
-//        capacity ++;
-//        if(capacity >= size){
+        String temp_queue[] = queue;
+        size = size +1;
+        queue = new String[size];
 
-//        String temp_queue[] = queue;
-//        size = size +1;
-//        String queue[] = Bank(size);
-//
-//        for(int i = 0; i <= size -2; i++){
-//            queue[i] = "hola";
-//        }
-//        index = index +1;
-        queue[index++] = info;
-        return "Se ha añadido a la cola!";
+        for(int i = 0; i <= size -2; i++){
+            queue[i] = temp_queue[i];
+        }
+        queue[index] = info;
+        index = index +1;
+        return "Bienvenido al banco!";
     }
     @RequestMapping(value = {"/pop"})
     @ResponseBody
     public String popQueue(){
         for(int i = 0; i < size -1; i++ ){
             queue[i] = queue[i+1];
-            queue[size -1] = null;
         }
+        queue[size -1] = null;
         return "Adios!";
     }
     @RequestMapping(value = {"/clear"})
