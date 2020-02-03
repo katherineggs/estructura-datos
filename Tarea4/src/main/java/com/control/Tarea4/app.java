@@ -46,7 +46,7 @@ public class app {
     @ResponseBody
     public int totalDebs(){
         int total = 0;
-        for(int i = 0; i < sizeDeb -1; i++){
+        for(int i = 0; i < sizeDeb; i++){
             total = total + debitos[i];
         }
         return total;
@@ -55,32 +55,26 @@ public class app {
     @ResponseBody
     public int totalCreds(){
         int total = 0;
-        for(int i = 0; i < sizeCred -1; i++){
+        for(int i = 0; i < sizeCred; i++){
             total = total + creditos[i];
         }
-        return total; }
+        return total;
+    }
     @RequestMapping(value = {"/Saldo"})
     @ResponseBody
     public String Saldo(){
         //total debitos - total creditos
         int saldo = totalDebs() - totalCreds();
         String resp = "El saldo es: "+ saldo;
-        return resp; }
+        return resp;
+    }
     @RequestMapping(value = {"/Prom"})
     @ResponseBody
     public String promDebs(){ //total debitos / cantidad en debs
-//        int cantidad = 0;
-//        for(int i = 0; i < 20 - 1; i++){
-//            if(debitos[i].isEmpty()){
-//                cantidad = cantidad;
-//            }
-//            else{
-//                cantidad ++;
-//            }
-//        }
         int prom = totalDebs()/sizeDeb;
         String ret = "El promedio de debitos es "+ prom;
-        return ret; }
+        return ret;
+    }
     @RequestMapping(value = {"/big"})
     @ResponseBody
     public String biggerDebs(){
@@ -103,6 +97,32 @@ public class app {
         String prom = promDebs();
         String bigger = biggerDebs();
         String fin = totDebs + "/n" + totCreds + "/n" + Saldo + "/n" + prom + "/n" + bigger;
+        return fin;
+    }
+    @RequestMapping(value = {"/incisoJ"})
+    @ResponseBody
+    public String incisoJ(int posicion){
+        int[] temp_deb = debitos;
+        sizeDeb = sizeDeb -1;
+        debitos = new int[sizeDeb];
+        int hola = 1;
+        for(int i = 0 ; i < sizeDeb; i++){
+            if (i == posicion){
+                hola = 0;
+            }
+            if (hola == 1){
+                debitos[i] = temp_deb[i];
+            }
+            if (hola == 0 ){
+                debitos[i] = temp_deb[i+1];
+            }
+        }
+        String totDebs = "El total de debitos es " + totalDebs();
+        String totCreds = "El total de creditos es " + totalCreds();
+        String Saldo = Saldo();
+        String prom = promDebs();
+        String bigger = biggerDebs();
+        String fin = totDebs + "\n" + totCreds + "\n" + Saldo + "\n" + prom + "\n" + bigger;
         return fin;
     }
 }
