@@ -7,69 +7,67 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 @Controller
 public class app {
-    int size = 0;
-    int index = 0;
-//    public static int[] Debs(){
-//        int debitos[] = new int[30];
-////        AGREGAR 10 DATOS
-//        return debitos;
-//    }
-//    public static int[] Creds(){
-//        int[] creditos = new int[30];
-////        AGREGAR 5 DATOS
-//        return creditos;
-//    }
-    int creditos[] = Tarea4.Creds();
-    int debitos[] = Tarea4.Debs();
+    int sizeDeb = 0;
+    int sizeCred = 0;
+    int indexDeb = 0;
+    int indexCred = 0;
+    int creditos[] = Tarea4.Creds(sizeCred);
+    int debitos[] = Tarea4.Debs(sizeDeb);
 
     @RequestMapping(value = {"/debitos"})
     @ResponseBody
-    public String setDebitos(@RequestParam int dato){
+    public int[] setDebitos(@RequestParam int dato){
         int[] temp_deb = debitos;
-        size = size +1;
-        debitos = new int[size];
+        sizeDeb = sizeDeb +1;
+        debitos = new int[sizeDeb];
 
-        for(int i = 0; i <= size -2; i++){
+        for(int i = 0; i <= sizeDeb -2; i++){
             debitos[i] = temp_deb[i];
         }
-        debitos[index] = dato;
-        index = index +1;
-        return "Debito!";
+        debitos[indexDeb] = dato;
+        indexDeb = indexDeb +1;
+        return debitos;
     }
     @RequestMapping(value = {"/creditos"})
     @ResponseBody
-    public String setCreditos(@RequestParam int dato){
+    public int[] setCreditos(@RequestParam int dato){
         int[] temp_creds = creditos;
-        size = size +1;
-        creditos = new int[size];
+        sizeCred = sizeCred +1;
+        creditos = new int[sizeCred];
 
-        for(int i = 0; i <= size -2; i++){
+        for(int i = 0; i <= sizeCred -2; i++){
             creditos[i] = temp_creds[i];
         }
-        creditos[index] = dato;
-        index = index +1;
-        return "Credito!";
+        creditos[indexCred] = dato;
+        indexCred = indexCred +1;
+        return creditos;
     }
+    @RequestMapping(value = {"/totD"})
+    @ResponseBody
     public int totalDebs(){
-        int total = 0; //DEBE SER INT O ALGO ASI
-        for(int i = 0; i < 20 -1; i++){
+        int total = 0;
+        for(int i = 0; i < sizeDeb -1; i++){
             total = total + debitos[i];
         }
         return total;
     }
+    @RequestMapping(value = {"/totC"})
+    @ResponseBody
     public int totalCreds(){
-        int total = 0; //DEBE SER INT O ALGO ASI
-        for(int i = 0; i < 20 -1; i++){
+        int total = 0;
+        for(int i = 0; i < sizeCred -1; i++){
             total = total + creditos[i];
         }
-        return total;
-    }
+        return total; }
+    @RequestMapping(value = {"/Saldo"})
+    @ResponseBody
     public String Saldo(){
         //total debitos - total creditos
         int saldo = totalDebs() - totalCreds();
         String resp = "El saldo es: "+ saldo;
-        return resp;
-    }
+        return resp; }
+    @RequestMapping(value = {"/Prom"})
+    @ResponseBody
     public String promDebs(){ //total debitos / cantidad en debs
 //        int cantidad = 0;
 //        for(int i = 0; i < 20 - 1; i++){
@@ -80,13 +78,14 @@ public class app {
 //                cantidad ++;
 //            }
 //        }
-        int prom = totalDebs()/size;
-        String ret = "El promedio es "+ prom;
-        return ret;
-    }
+        int prom = totalDebs()/sizeDeb;
+        String ret = "El promedio de debitos es "+ prom;
+        return ret; }
+    @RequestMapping(value = {"/big"})
+    @ResponseBody
     public String biggerDebs(){
         int bigger;
-        for(int i = 0; i < 20 - 1; i++){
+        for(int i = 0; i < sizeDeb - 1; i++){
             if(debitos[i] < debitos[i+1]){ //DEBE SER INT O ALGO ASI
                 debitos[i] = debitos[i+1]; //Y ALGO MAS
             }
@@ -103,33 +102,7 @@ public class app {
         String Saldo = Saldo();
         String prom = promDebs();
         String bigger = biggerDebs();
-        String fin = totDebs + "\n" + totCreds + "\n" + Saldo + "\n" + prom + "\n" + bigger;
+        String fin = totDebs + "/n" + totCreds + "/n" + Saldo + "/n" + prom + "/n" + bigger;
         return fin;
     }
-
-//    int size = 10;
-//    public static String[] debis(size){
-//        String debitos[] = new String[size];
-//        return debitos;
-//    }
-//    public void credis(){
-//        String creditos[] = new String[size];
-//    }
-//    String debitos =
-//    public String totalDebs(){
-//        int total = 0;
-//        for(int i = 0; i < size; i++){
-//            total = total + debitos[i];
-//        }
-//        return total;
-//    }
-//    public String totalCreds(){
-//        int total = 0;
-//        for(int i = 0; i < size; i++){
-//            total = total + creditos[i];
-//        }
-//        return total;
-//    }
-//
-
 }
