@@ -119,7 +119,7 @@ public class app {
         }
         String totDebs = "El total de debitos es " + totalDebs();
         String totCreds = "El total de creditos es " + totalCreds();
-        String Saldo = Saldo();
+        String Saldo = Saldo    ();
         String prom = promDebs();
         String bigger = biggerDebs();
         String fin = totDebs + "\n" + totCreds + "\n" + Saldo + "\n" + prom + "\n" + bigger;
