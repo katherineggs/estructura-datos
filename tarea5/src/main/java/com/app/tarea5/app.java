@@ -37,16 +37,16 @@ public class app {
             indexT++;
         }
         for(int mayor = 0; mayor < cantidad.length-1; mayor ++){
-            if(cantidad[mayor] < cantidad[mayor + 1] ){
-                int var = cantidad[mayor];
-                cantidad[mayor] = cantidad[mayor+1];
-                cantidad[mayor+1] = var; //numeros
-                String ast = top[mayor];
-                top[mayor] = top[mayor+1];
-                top[mayor+1] = ast; //asteriscos
-            }
+                if(cantidad[mayor] < cantidad[mayor + 1] ){
+                    int var = cantidad[mayor];
+                    cantidad[mayor] = cantidad[mayor+1];
+                    cantidad[mayor+1] = var; //numeros
+                    String ast = top[mayor];
+                    top[mayor] = top[mayor+1];
+                    top[mayor+1] = ast; //asteriscos
+                }
         }
-        for(int i =0; i <10; i++){
+        for(int i =0; i < 10; i++){
             result = result + top[i];
         }
         return result;
