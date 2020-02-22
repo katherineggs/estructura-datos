@@ -1,8 +1,12 @@
 # Estructura de Datos Katherine Garcia
 
+## Carpeta tarea 7
+Estructura POINT y retorna el cuadrante en le que se encuentra el punto.
+- <a href="https://github.com/katherineggs/estructura-datos/tree/master/tarea6">Tarea 7</a>
+
 ## Carpeta tarea 6 
 Estructura POINT y retorna el cuadrante en le que se encuentra el punto.
-- <a href="https://github.com/katherineggs/estructura-datos/tree/master/tarea5">Tarea 6</a>
+- <a href="https://github.com/katherineggs/estructura-datos/tree/master/tarea6">Tarea 6</a>
 
 ## Carpeta tarea 5 
 Histograma con los 10 chars mas repetidos de "Lorem Ipsum"
