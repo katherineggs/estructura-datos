@@ -1,6 +1,6 @@
 # Estructura de Datos Katherine Garcia
 
-## Carpeta tarea 7
+## Carpeta linked 7
 Playlist of songs with linked lists
 - <a href="https://github.com/katherineggs/estructura-datos/tree/master/linked7">Tarea 7</a>
 
