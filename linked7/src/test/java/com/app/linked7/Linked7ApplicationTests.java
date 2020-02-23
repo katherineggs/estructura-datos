@@ -1,10 +1,10 @@
-package com.app.tarea7;
+package com.app.linked7;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class Tarea7ApplicationTests {
+class Linked7ApplicationTests {
 
 	@Test
 	void contextLoads() {

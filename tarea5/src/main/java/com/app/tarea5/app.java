@@ -17,7 +17,7 @@ public class app {
     static String result = "";
     @RequestMapping(value = {"/text"})
     @ResponseBody
-    public static String textCount(@RequestParam String text){
+    public static void textCount(@RequestParam String text){
         text = text.toLowerCase();
         for(int i = 0; i < text.length() + 1; i++){
             text = text.replaceAll("\\s+","");
