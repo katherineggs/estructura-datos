@@ -68,7 +68,7 @@ public class app {
     public static String playPrevious(){
         try{
             for(int i = 0; i < playlist.length; i++){
-            if(playlist[i] == (play)){
+            if(playlist[i-1] == (play)){
                 newPlay = playlist[pointer[i-1]];
             }
         }
