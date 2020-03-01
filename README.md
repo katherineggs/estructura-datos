@@ -1,5 +1,9 @@
 # Estructura de Datos Katherine Garcia
 
+## Carpeta tarea 8
+Empresa de reparto de propagandas 
+- <a href="https://github.com/katherineggs/estructura-datos/tree/master/tarea8">Tarea 8</a>
+
 ## Carpeta linked 7
 Playlist of songs with linked lists
 - <a href="https://github.com/katherineggs/estructura-datos/tree/master/linked7">Tarea 7</a>
