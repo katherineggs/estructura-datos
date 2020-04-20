@@ -1,5 +1,8 @@
 # Estructura de Datos Katherine Garcia
 
+## Hashing & Graphs
+- <a href="https://github.com/katherineggs/estructura-datos/tree/master/Hashing%20%26%20Graphs">Hashing & Graphs</a>
+
 ## Carpeta tarea 8
 Empresa de reparto de propagandas 
 - <a href="https://github.com/katherineggs/estructura-datos/tree/master/tarea8">Tarea 8</a>
