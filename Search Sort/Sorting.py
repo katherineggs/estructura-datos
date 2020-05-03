@@ -1,7 +1,7 @@
 
 a = [13,5,7,9,1,3,4,6]
 
-def selectionSort(unsorted:list) -> list:
+def selectionSort(unsorted):
     for i in range(0,len(unsorted)-1):
         min = i
         for j in range(i+1, len(unsorted)):
@@ -13,7 +13,7 @@ def selectionSort(unsorted:list) -> list:
 
 print(selectionSort(a))
 
-def bubbleSort(unsorted:list) -> list:
+def bubbleSort(unsorted):
     for i in range(0,len(unsorted)):
         for j in range(0, len(unsorted) -1 -i):
             if unsorted[j]> unsorted[j+1]:

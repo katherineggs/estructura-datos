@@ -1,23 +1,3 @@
-# QUICK SORT
-def Pivot(array,small,tall):
-    sIndex = small - 1
-    piv = array[tall]
-
-    for i in range(small , tall):
-        if array[i] < piv:
-            sIndex += 1
-            array[sIndex], array[i] = array[i], array[sIndex]
-
-    array[sIndex+1], array[tall] = array[tall], array[sIndex+1]
-    return sIndex+1
-
-def QuickSort(array,small,tall):
-    if small < tall:
-        pIndex = Pivot(array,small,tall)
-        QuickSort(array,small,pIndex-1)
-        QuickSort(array,pIndex+1,tall)
-    
-########
 #INSERTION SORT
 def InsertionSort(array):
     for i in range(1, len(array)):
@@ -27,6 +7,7 @@ def InsertionSort(array):
             array[num+1] = array[num]
             num -= 1
         array[num+1] = key
+    return array
 
 def MergeSort(array):
     if len(array) > 1:
@@ -66,33 +47,29 @@ def MergeSort(array):
             array[k] = right[indexR] 
             indexR += 1
             k += 1
+    return array
 
-def printList(array): 
-    for i in range(len(array)):         
-        print(array[i],end=" ") 
-    print() 
+# def printList(array): 
+#     for i in range(len(array)):         
+#         print(array[i],end=" ") 
+#     print() 
   
 if __name__ == '__main__': 
     array = [15, 22, 1, 9, 6, 67]  
-    length = len(array) 
 
     print ("Array is")  
-    printList(array) 
+    # printList(array) 
+    print(array)
     print("")
     
-    QuickSort(array,0,length-1)
-    print("Quick Sort array is: ") 
-    printList(array)
+    print("Inserion Sort array is: ")
+    print(InsertionSort(array)) 
+    # printList(array) 
     print("")
- 
-    InsertionSort(array)
-    print("Inserion Sort array is: ") 
-    printList(array) 
-    print("")
-    
-    MergeSort(array) 
+     
     print("Merge Sort array is: ") 
-    printList(array) 
+    print(MergeSort(array))
+    # printList(array) 
     print("")
 
 

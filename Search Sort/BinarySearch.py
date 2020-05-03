@@ -22,7 +22,7 @@ def BinarySearch(sortedArray,num,lenghtt,element,steps):
     else:
         return "NotFound"
 
-sortedArray = [0,2,4,5,7,9]
-element = int(input("Element to find: "))
-lenght = len(sortedArray)
-print(BinarySearch(sortedArray,0,lenght-1,element,1))
+# sortedArray = [0,2,4,5,7,9]
+# element = int(input("Element to find: "))
+# lenght = len(sortedArray)
+# print(BinarySearch(sortedArray,0,lenght-1,element,1))
